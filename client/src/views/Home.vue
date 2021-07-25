@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>{{ !loggedIn ? 'Login or Register' : 'Welcome Home!' }}</h1>
+    <h1>{{ !loggedIn ? 'Are you an user of us?' : 'Welcome Home!' }}</h1>
 
     <div class="card">
       <div class="card-body">

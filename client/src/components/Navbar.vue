@@ -21,12 +21,12 @@
         </div>
         <div v-if="!loggedIn">
           <router-link to="login"
-            ><button class="btn btn-primary ma-2">
+            ><button id="login-btn" class="btn btn-primary ma-2">
               Login
             </button></router-link
           >
           <router-link to="register"
-            ><button class="btn btn-primary ms-2">
+            ><button id="register-btn" class="btn btn-primary ms-2">
               Register
             </button></router-link
           >

@@ -23,12 +23,13 @@
     </div>
     <div
       v-if="message && clicked"
+      id="message-alert"
       class="alert mt-2"
       :class="successful ? 'alert-success' : 'alert-danger'"
     >
       {{ message }}
     </div>
-    <button class="btn btn-primary mt-2">
+    <button id="auth-btn" class="btn btn-primary mt-2">
       {{ style === 'register' ? 'Register' : 'Login' }}
     </button>
   </form>
@@ -116,7 +117,7 @@ export default defineComponent({
   watch: {
     clicked(val) {
       if (val) {
-        setTimeout(() => (this.clicked = false), 2000)
+        setTimeout(() => (this.clicked = false), 2000000)
       }
     }
   }
