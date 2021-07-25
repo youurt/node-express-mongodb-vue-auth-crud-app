@@ -1,23 +1,40 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <navbar />
+  <wrapper>
+    <router-view />
+  </wrapper>
 </template>
 
+<script>
+import { defineComponent } from 'vue'
+import Navbar from '@/components/Navbar.vue'
+import Wrapper from '@/containers/Wrapper.vue'
+
+export default defineComponent({
+  components: {
+    Navbar,
+    Wrapper
+  }
+})
+</script>
+
 <style lang="scss">
+body {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
