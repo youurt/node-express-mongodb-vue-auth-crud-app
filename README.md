@@ -32,7 +32,7 @@
 ### in progress
 
 - [ ] typescriptify backend / frontend
-- [ ] loading ? status on frontend
+- [ ] loading api status on frontend
 - [ ] testing the api too
 - [ ] delete the data with api call (not just update to '')
 - [ ] add client-side / server side form / validation
