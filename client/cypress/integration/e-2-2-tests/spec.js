@@ -39,58 +39,54 @@ const user = 'same_user222'
 
 */
 
-const user = 'same_user222'
+const user = 'same_user2222'
 const password = 'random_password'
 
-// describe('Registration is working', () => {
-//   //   beforeEach(() => {
+describe('Registration is working', () => {
+  it('loads', () => {
+    cy.visit('http://localhost:8081/register')
+    cy.contains('Register')
+  })
 
-//   //   })
+  it('register a user', () => {
+    cy.get('input')
+      .get('#username')
+      .type(user)
+      .get('input')
+      .get('#password')
+      .type(password)
+  })
 
-//   it('loads', () => {
-//     cy.visit('http://localhost:8081/register')
-//     cy.contains('Register')
-//   })
+  it('submit registration', () => {
+    cy.get('#auth-btn').click()
+  })
 
-//   it('register a user', () => {
-//     cy.get('input')
-//       .get('#username')
-//       .type(user)
-//       .get('input')
-//       .get('#password')
-//       .type(password)
-//   })
+  it('shows that new user is added', () => {
+    cy.contains('new user added')
+  })
 
-//   it('submit registration', () => {
-//     cy.get('#auth-btn').click()
-//   })
+  it('loads page again', () => {
+    cy.visit('http://localhost:8081/register')
+    cy.contains('Register')
+  })
 
-//   it('shows that new user is added', () => {
-//     cy.contains('new user added')
-//   })
+  it('registers the same user again', () => {
+    cy.get('input')
+      .get('#username')
+      .type(user)
+      .get('input')
+      .get('#password')
+      .type(password)
+  })
 
-//   it('loads page again', () => {
-//     cy.visit('http://localhost:8081/register')
-//     cy.contains('Register')
-//   })
+  it('submits again', () => {
+    cy.get('#auth-btn').click()
+  })
 
-//   it('registers the same user again', () => {
-//     cy.get('input')
-//       .get('#username')
-//       .type(user)
-//       .get('input')
-//       .get('#password')
-//       .type(password)
-//   })
-
-//   it('submits again', () => {
-//     cy.get('#auth-btn').click()
-//   })
-
-//   it('shows that new user is added, so no registration', () => {
-//     cy.contains('user allready exists')
-//   })
-// })
+  it('shows that new user is added, so no registration', () => {
+    cy.contains('user allready exists')
+  })
+})
 
 describe('Login is working', () => {
   it('loads', () => {
