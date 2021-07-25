@@ -1,6 +1,7 @@
 const User = require('../models/user.model.js')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const passwordIsValid = require('../composables/passwordIsValid.js')
+const getToken = require('../composables/getToken.js')
 
 exports.login = (req, res) => {
   User.findOne({ username: req.body.username }, (err, user) => {
@@ -8,22 +9,16 @@ exports.login = (req, res) => {
       return res.status(404).send({ message: 'User not found' })
     }
 
-    const passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
-
-    if (!passwordIsValid) {
+    if (!passwordIsValid(req, user)) {
       return res
         .status(401)
         .send({ accessToken: null, message: 'Invalid Password!' })
     }
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_KEY, {
-      expiresIn: 86400
-    })
-
     res.status(200).send({
       id: user._id,
       username: user.username,
-      accessToken: token
+      accessToken: getToken(user)
     })
   })
 }
