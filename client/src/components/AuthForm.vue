@@ -117,7 +117,7 @@ export default defineComponent({
   watch: {
     clicked(val) {
       if (val) {
-        setTimeout(() => (this.clicked = false), 2000000)
+        setTimeout(() => (this.clicked = false), 3000)
       }
     }
   }
