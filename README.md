@@ -12,6 +12,35 @@
 - end to end testing with cypress.io (just the login / registration parts, could've done more extensive)
 
 
+## how to install
+- be sure to have mongodb and node running on your computer https://docs.mongodb.com/manual/installation/ and https://nodejs.org/en/download/
+
+- the server should be running on port 8080 and the client on port 8081
+
+- [server-side]: cd into the server folder and npm i
+
+
+```
+cd server
+npm i
+npm start
+```
+
+- [client-side]: cd into the client folder and yarn
+  
+```
+cd client
+yarn
+yarn serve
+```
+
+- [testing]: cd into client folder and yarn cypress:test
+```
+cd client
+yarn cypress:open
+```
+
+
 ## done / todos / nice to haves / ideas
 
 #### server-side
