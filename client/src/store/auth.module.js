@@ -1,4 +1,11 @@
 import AuthService from '@/services/auth.service'
+import {
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGOUT,
+  REGISTER_SUCCESS,
+  REGISTER_FAILURE
+} from '@/constants/store.constants.js'
 
 const user = JSON.parse(localStorage.getItem('user'))
 
@@ -14,11 +21,11 @@ export const auth = {
       if (user) {
         return AuthService.login(user).then(
           (user) => {
-            commit('loginSuccess', user)
+            commit(LOGIN_SUCCESS, user)
             return Promise.resolve(user)
           },
           (error) => {
-            commit('loginFailure')
+            commit(LOGIN_FAILURE)
             return Promise.reject(error)
           }
         )
@@ -26,16 +33,16 @@ export const auth = {
     },
     logout({ commit }) {
       AuthService.logout()
-      commit('logout')
+      commit(LOGOUT)
     },
     register({ commit }, user) {
       return AuthService.register(user).then(
         (response) => {
-          commit('registerSuccess')
+          commit(REGISTER_SUCCESS)
           return Promise.resolve(response.data)
         },
         (error) => {
-          commit('registerFailure')
+          commit(REGISTER_FAILURE)
           return Promise.reject(error)
         }
       )
