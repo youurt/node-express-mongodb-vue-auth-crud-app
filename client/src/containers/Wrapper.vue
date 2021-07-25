@@ -14,8 +14,6 @@ export default defineComponent({
 
 <style>
 .wrapper {
-  padding-left: 600px;
-  padding-right: 600px;
-  padding-top: 100px;
+  padding: 50px;
 }
 </style>

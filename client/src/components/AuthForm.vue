@@ -1,6 +1,6 @@
 <template>
   <h2>{{ style === 'register' ? 'Register' : 'Login' }}</h2>
-  <form name="form" @submit.prevent="handler">
+  <form class="w-25" name="form" @submit.prevent="handler">
     <div class="form-group">
       <label for="username">Username:</label>
       <input
