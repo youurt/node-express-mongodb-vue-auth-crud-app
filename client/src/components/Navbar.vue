@@ -9,7 +9,6 @@
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#">Link</a> -->
             <router-link to="profile" class="nav-link">Profile</router-link>
           </li>
         </ul>

@@ -46,9 +46,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-// import User from '../models/user'
 import UserService from '../services/user.service'
-// import Timer from 'tiny-timer'
 
 export default defineComponent({
   name: 'Profile',

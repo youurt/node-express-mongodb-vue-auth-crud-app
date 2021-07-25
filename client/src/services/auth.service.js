@@ -1,8 +1,6 @@
 import axios from 'axios'
 import { AUTH_API_URL as API_URL } from '@/constants/service.constants.js'
 
-// const API_URL = 'http://localhost:8080/auth/'
-
 class AuthService {
   login(user) {
     if (user) {

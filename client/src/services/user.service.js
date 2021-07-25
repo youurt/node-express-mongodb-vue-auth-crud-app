@@ -2,8 +2,6 @@ import axios from 'axios'
 import authHeader from '@/services/auth.service.header'
 import { PROFILE_API_URL as API_URL } from '@/constants/service.constants.js'
 
-// const API_URL = 'http://localhost:8080/user/profile/'
-
 class UserService {
   getProfile(user) {
     return axios
