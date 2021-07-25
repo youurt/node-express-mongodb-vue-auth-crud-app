@@ -5,7 +5,7 @@ const db = require('./app/models')
 const dbConfig = require('./app/config/db.config')
 const indexRouter = require('./app/routes/index.js')
 const authRouter = require('./app/routes/auth.js')
-// const userRouter = require('./app/routes/user')
+const userRouter = require('./app/routes/user')
 require('dotenv').config()
 
 app.use(cors())
@@ -29,6 +29,7 @@ db.mongoose
 
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
+app.use('/user', userRouter)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080
