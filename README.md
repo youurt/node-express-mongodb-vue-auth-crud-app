@@ -12,7 +12,7 @@
 - end to end testing with cypress.io (just the login / registration parts, could've done more extensive)
 
 
-## todos / nice to haves / ideas
+## done / todos / nice to haves / ideas
 
 #### server-side
 - [x] authentification jwt 
